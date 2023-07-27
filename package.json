@@ -1,0 +1,46 @@
+{
+  "name": "@simply007org/kontent-ai-astro",
+  "version": "0.0.1",
+  "description": "An Astro integration for the Kontent.ai Headless CMS",
+  "main": "./dist/kontent-ai-astro.js",
+  "module": "./dist/kontent-ai-astro.mjs",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/kontent-ai-astro.mjs",
+      "require": "./dist/kontent-ai-astro.js"
+    },
+    "./KontentAiComponent.astro": "./dist/KontentAiComponent.astro"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "prepublishOnly": "npm run build && cp src/KontentAiComponent.astro ./dist"
+  },
+  "dependencies": {
+    "@kontent-ai/delivery-sdk": "^14.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-dynamic-import-vars": "^2.0.3",
+    "@types/node": "^18.13.0",
+    "astro": "^2.9.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.1.1",
+    "vite-plugin-dts": "^3.3.1"
+  },
+  "keywords": [
+    "astro",
+    "kontent",
+    "kontent-ai",
+    "astro-component"
+  ],
+  "author": "Ondřej Chrastina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Simply007/kontent-ai-astro/issues"
+  },
+  "homepage": "https://github.com/Simply007/kontent-ai-astro#readme"
+}
