@@ -1,6 +1,6 @@
 # kontent-ai-astro
 
-An integration inspired by Storyblok & Contentful for astro for those using Kontent.ai as their headless CMS and wish to map Content Models to their Astro components.
+An integration inspired by Contentful for astro for those using Kontent.ai as their headless CMS and wish to map Content Models to their Astro components.
 
 ## Installation
 
@@ -32,7 +32,7 @@ export default defineConfig({
 
 ## How to set it up
 
-Add your Contentful `environmentId` (previewApiKey & secureApiKey is currently ignored).
+Add your Kontent.ai `environmentId` (previewApiKey & secureApiKey is currently ignored).
 
 Hopefully you will have created a component for each Content Model you have in Kontent.ai. This configuration allows you to effectively register all your components so that when Kontent.ai is rendering your page it has them all available to use.
 
@@ -53,7 +53,7 @@ The example below shows a potential idea for looping through components and usin
 
 ```jsx
 ---
-import KontentAiComponent from 'contentful-astro/KontentAiComponent.astro';
+import KontentAiComponent from 'kontent-ai-astro/KontentAiComponent.astro';
 
 const { components } = Astro.props;
 ---
@@ -64,3 +64,7 @@ const { components } = Astro.props;
   })}
 </>
 ```
+
+## Wall of fame
+
+Thank you @ajsummerfield for putting together the [Contentful integration](https://github.com/ajsummerfield/contentful-astro) I can customize.
