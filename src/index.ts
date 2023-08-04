@@ -20,6 +20,7 @@ export default function kontentAiIntegration(options: IntegrationOptions): Astro
     name: "kontent-ai-astro",
     hooks: {
       "astro:config:setup": ({ updateConfig, injectScript }) => {
+        console.log("options: "+ JSON.stringify(options, undefined, 2))
         updateConfig({
           vite: {
             plugins: [

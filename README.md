@@ -19,9 +19,9 @@ import kontentAiAstro from "kontent-ai-astro";
 export default defineConfig({
   integrations: [
     kontentAiAstro({
-      environmentId: 'ENVIRONMENT_ID',
+      environmentId: "ENVIRONMENT_ID",
       previewApiKey: "PREVIEW_API_KEY",
-      secureApiKey: "SECURE_API_KEY"
+      secureApiKey: "SECURE_API_KEY",
       components: {
         // add your components here
       },
@@ -53,14 +53,22 @@ The example below shows a potential idea for looping through components and usin
 
 ```jsx
 ---
-import KontentAiComponent from 'kontent-ai-astro/KontentAiComponent.astro';
+import KontentAiComponent from '@simply007org/kontent-ai-astro/KontentAiComponent.astro';
+import { useKontentAiClient } from "@simply007org/kontent-ai-astro";
 
-const { components } = Astro.props;
+const deliveryClient = useKontentAiClient();
+
+const response = await deliveryClient
+  .types(["page", "hero"]) // depends what you want to fetch and have registered the components for
+  .depthParameter(1)
+  .toAllPromise();
+
+const items  =  response.data.items;
 ---
 
 <>
-  {components?.map((comp) => {
-    return <KontentAiComponent type={comp.system.type} {...comp.elements} />
+  {items?.map((item) => {
+    return <KontentAiComponent type={item.system.type} {...item.elements} />
   })}
 </>
 ```

@@ -16,6 +16,7 @@ export function vitePluginKontentAiComponents(components?: object) {
         const imports: string[] = [];
         const keys: string[] = [];
 
+
         if (components !== undefined) {
           for await (const [key, value] of Object.entries(components)) {
             const { id } = await this.resolve(`/src/${value}.astro`);
