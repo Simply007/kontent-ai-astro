@@ -1,6 +1,6 @@
 {
   "name": "@simply007org/kontent-ai-astro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An Astro integration for the Kontent.ai Headless CMS",
   "main": "./dist/kontent-ai-astro.js",
   "module": "./dist/kontent-ai-astro.mjs",
