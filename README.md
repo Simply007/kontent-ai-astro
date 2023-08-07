@@ -73,6 +73,8 @@ const items  =  response.data.items;
 </>
 ```
 
+> Example of the usage is showcased in <https://github.com/Simply007/beautiful-team-activity-astro/tree/test-kontent-ai-integration>
+
 ## Wall of fame
 
 Thank you @ajsummerfield for putting together the [Contentful integration](https://github.com/ajsummerfield/contentful-astro) I can customize.

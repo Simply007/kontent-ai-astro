@@ -13,7 +13,7 @@ export function vitePluginKontentAiClient(environmentId: string, previewApiKey?:
       if (id === resolvedVirtualModuleId) {
         return `
           import { createDeliveryClient } from "@kontent-ai/delivery-sdk";
-
+          
           export const kontentAiClient = createDeliveryClient({
             environmentId: "${environmentId}",
             previewApiKey: "${previewApiKey}",

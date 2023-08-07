@@ -1,6 +1,6 @@
 {
   "name": "@simply007org/kontent-ai-astro",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Astro integration for the Kontent.ai Headless CMS",
   "main": "./dist/kontent-ai-astro.js",
   "module": "./dist/kontent-ai-astro.mjs",
@@ -21,13 +21,13 @@
     "prepublishOnly": "npm run build && cpx ./src/KontentAiComponent.astro ./dist"
   },
   "dependencies": {
-    "@kontent-ai/delivery-sdk": "^14.0.0",
-    "cpx": "^1.5.0"
+    "@kontent-ai/delivery-sdk": "^14.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^2.0.3",
     "@types/node": "^18.13.0",
     "astro": "^2.9.3",
+    "cpx": "^1.5.0",
     "typescript": "^5.1.6",
     "vite": "^4.1.1",
     "vite-plugin-dts": "^3.3.1"
