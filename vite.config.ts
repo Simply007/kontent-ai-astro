@@ -1,6 +1,7 @@
 import { defineConfig, Plugin } from "vite";
 import path from "path";
 import dts from "vite-plugin-dts";
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const name = "kontent-ai-astro";
 
@@ -16,7 +17,16 @@ export default defineConfig(() => {
         fileName: (format) => (format === "es" ? `${name}.mjs` : `${name}.js`),
       },
     },
+
     plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: 'KontentAiComponent.astro',
+            dest: '.'
+          }
+        ]
+      }),
       dts({
         skipDiagnostics: false,
       }) as unknown as Plugin,

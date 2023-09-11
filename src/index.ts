@@ -1,13 +1,11 @@
 
 import type { AstroIntegration } from "astro";
-import type { DeliveryClient } from "@kontent-ai/delivery-sdk";
+import type { DeliveryClient, IDeliveryClientConfig } from "@kontent-ai/delivery-sdk";
 import { vitePluginKontentAiClient } from "./vitePluginKontentAiClient";
 import { vitePluginKontentAiComponents } from "./vitePluginKontentAiComponents";
 
 export type IntegrationOptions = {
-  environmentId: string;
-  previewApiKey?: string;
-  secureApiKey?: string;
+  deliveryClientConfig: IDeliveryClientConfig,
   components?: object;
 };
 
@@ -23,7 +21,7 @@ export default function kontentAiIntegration(options: IntegrationOptions): Astro
         updateConfig({
           vite: {
             plugins: [
-              vitePluginKontentAiClient(options.environmentId, options.previewApiKey, options.secureApiKey),
+              vitePluginKontentAiClient(options.deliveryClientConfig),
               vitePluginKontentAiComponents(options.components)
             ]
           },

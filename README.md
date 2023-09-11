@@ -19,9 +19,12 @@ import kontentAiAstro from "kontent-ai-astro";
 export default defineConfig({
   integrations: [
     kontentAiAstro({
-      environmentId: "ENVIRONMENT_ID",
-      previewApiKey: "PREVIEW_API_KEY",
-      secureApiKey: "SECURE_API_KEY",
+      deliveryClientConfig: {
+        environmentId: "ENVIRONMENT_ID",
+        previewApiKey: "PREVIEW_API_KEY",
+        secureApiKey: "SECURE_API_KEY",
+        // https://github.com/kontent-ai/delivery-sdk-js#client-configuration
+      },
       components: {
         // add your components here
       },
@@ -30,9 +33,9 @@ export default defineConfig({
 });
 ```
 
-## How to set it up
+> Since this integration is using [Astro Vite plugins structure](https://docs.astro.build/en/reference/integrations-reference/#astroconfigsetup) is it not possible to pass function hooks from Kontent Delivery SDK configuration - so only value-based properties are applied in [Kontent.ai delivery client configuration](https://github.com/kontent-ai/delivery-sdk-js#client-configuration).
 
-Add your Kontent.ai `environmentId` (previewApiKey & secureApiKey is currently ignored).
+## How to set it up
 
 Hopefully you will have created a component for each Content Model you have in Kontent.ai. This configuration allows you to effectively register all your components so that when Kontent.ai is rendering your page it has them all available to use.
 
